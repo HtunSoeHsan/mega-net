@@ -38,6 +38,12 @@
         $(".offcanvas__menu__overlay").removeClass("active");
     });
 
+    // header__menu action
+    $(".header__btn").on('click',function(){
+        $(".header__btn").removeClass("active");
+        $(this).addClass("active");
+        console.log("htun ",this);
+    })
     /*------------------
         Accordin Active
     --------------------*/
@@ -106,13 +112,16 @@
 
         if(e.target.htmlFor == 'home') {
             $(".business__plans").removeClass('active');
+            $(".enterprise__plans").removeClass('active');
             $(".home__plans").addClass('active');
         } else if (e.target.htmlFor == 'business') {
             $(".home__plans").removeClass('active');
+            $(".enterprise__plans").removeClass('active');
             $(".business__plans").addClass('active');
         } else if (e.target.htmlFor == 'enterprise') {
             $(".home__plans").removeClass('active');
-            $(".business__plans").addClass('active');
+            $(".business__plans").removeClass('active');
+            $(".enterprise__plans").addClass('active');
         }  
 
     });
